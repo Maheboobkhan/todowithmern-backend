@@ -12,7 +12,7 @@ app.use("/", (req, res)=>{
   res.json({message: "hello from Express App"});
 })
 // const CLIENT_URL_STRING = process.env.CLIENT_URL || 'http://localhost:3000';
-const CLIENT_URL_STRING = process.env.CLIENT_URL;
+const CLIENT_URL_STRING = 'https://todowithmern-frontend.vercel.app';
 
 const allowedDomains = CLIENT_URL_STRING.split(', ');
 console.log(allowedDomains);
@@ -49,8 +49,8 @@ app.use((err, req, res) => {
 
 const connectDB = async () => {
   try {
-    await mongoose.connect(process.env.DB_CONNECTION_STRING);
     // await mongoose.connect('mongodb://localhost:27017');
+    await mongoose.connect(process.env.DB_CONNECTION_STRING);
     console.log('MongoDB Connected');
   } catch (err) {
     console.log(err);
