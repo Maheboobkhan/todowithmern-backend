@@ -8,6 +8,9 @@ import allRoutes from './routes/index.js';
 
 const app = express();
 const PORT = process.env.PORT || 8000;
+app.use("/", (req, res)=>{
+  res.json({message: "hello from Express App"});
+})
 const CLIENT_URL_STRING = process.env.CLIENT_URL || 'http://localhost:3000';
 
 const allowedDomains = CLIENT_URL_STRING.split(', ');
