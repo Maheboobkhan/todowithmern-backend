@@ -11,7 +11,8 @@ const PORT = process.env.PORT || 8000;
 app.use("/", (req, res)=>{
   res.json({message: "hello from Express App"});
 })
-const CLIENT_URL_STRING = process.env.CLIENT_URL || 'http://localhost:3000';
+// const CLIENT_URL_STRING = process.env.CLIENT_URL || 'http://localhost:3000';
+const CLIENT_URL_STRING = process.env.CLIENT_URL;
 
 const allowedDomains = CLIENT_URL_STRING.split(', ');
 console.log(allowedDomains);
